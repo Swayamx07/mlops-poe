@@ -14,7 +14,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing Python dependencies...'
-                bat 'python -m pip install -r requirements.txt'
+                bat 'python -m pip install --default-timeout=300 --retries 5 -r requirements.txt'
             }
         }
 
